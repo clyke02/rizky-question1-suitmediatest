@@ -81,7 +81,7 @@ class SecondScreenView extends GetView<SecondScreenController> {
             CustomButton(
               text: 'Choose a User',
               onPressed: () {
-                controller.changeName();
+                controller.goToNextScreen();
               },
             ),
           ],

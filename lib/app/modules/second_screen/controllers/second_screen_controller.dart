@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:rizky_question1_suitmediatest/app/routes/app_pages.dart';
 
 class SecondScreenController extends GetxController {
   String name = '';
@@ -15,5 +16,9 @@ class SecondScreenController extends GetxController {
 
   void changeName() {
     selectedUser.value = 'Jokowi';
+  }
+
+  void goToNextScreen() {
+    Get.toNamed(Routes.THIRD_SCREEN);
   }
 }

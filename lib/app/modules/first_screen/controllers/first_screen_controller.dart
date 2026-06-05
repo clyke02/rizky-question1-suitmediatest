@@ -17,7 +17,12 @@ class FirstScreenController extends GetxController {
     String text = palindromeController.text;
     String reversedText = text.split('').reversed.join('');
     if (text == reversedText) {
-      Get.snackbar('Palindrome Check', 'The text is a palindrome!');
+      Get.snackbar(
+        backgroundColor: Colors.green,
+        colorText: Colors.white,
+        'Palindrome Check',
+        'The text is a palindrome!',
+      );
     } else {
       Get.snackbar(
         backgroundColor: Colors.red,

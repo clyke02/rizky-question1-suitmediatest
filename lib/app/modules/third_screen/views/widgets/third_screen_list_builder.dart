@@ -5,6 +5,7 @@ import 'package:lottie/lottie.dart';
 
 import '../../models/user_model.dart';
 import 'third_screen_list_item.dart';
+import 'third_screen_shimmer.dart';
 
 class ThirdScreenListBuilder extends StatelessWidget {
   const ThirdScreenListBuilder({super.key, required this.pagingController});
@@ -36,12 +37,10 @@ class ThirdScreenListBuilder extends StatelessWidget {
                   Get.back(result: fullName);
                 },
               ),
-              newPageProgressIndicatorBuilder: (_) => const Padding(
-                padding: EdgeInsets.symmetric(vertical: 16),
-                child: Center(child: CircularProgressIndicator()),
-              ),
+              newPageProgressIndicatorBuilder: (_) =>
+                  const ThirdScreenShimmer(itemCount: 2),
               firstPageProgressIndicatorBuilder: (_) =>
-                  const Center(child: CircularProgressIndicator()),
+                  const ThirdScreenShimmer(),
               noItemsFoundIndicatorBuilder: (_) => Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,

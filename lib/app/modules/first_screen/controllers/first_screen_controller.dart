@@ -29,6 +29,6 @@ class FirstScreenController extends GetxController {
   }
 
   void goToNextScreen() {
-    Get.toNamed(Routes.SECOND_SCREEN);
+    Get.toNamed(Routes.SECOND_SCREEN, arguments: {'name': nameController.text});
   }
 }

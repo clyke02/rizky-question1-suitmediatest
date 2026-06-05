@@ -1,23 +1,19 @@
 import 'package:get/get.dart';
 
 class SecondScreenController extends GetxController {
-  //TODO: Implement SecondScreenController
+  String name = '';
+  Rx<String> selectedUser = 'Select User Name'.obs;
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
+    final args = Get.arguments;
+    if (args != null && args is Map) {
+      name = args['name'] ?? '';
+    }
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  void changeName() {
+    selectedUser.value = 'Jokowi';
   }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../widgets/custom_button.dart';
 import '../../../widgets/custom_text_field.dart';
 import '../controllers/first_screen_controller.dart';
 
@@ -42,6 +43,10 @@ class FirstScreenView extends GetView<FirstScreenController> {
                     controller: controller.palindromeController,
                     hintText: 'Palindrome',
                   ),
+                  const SizedBox(height: 45),
+                  CustomButton(text: 'CHECK', onPressed: () {}),
+                  const SizedBox(height: 15),
+                  CustomButton(text: 'NEXT', onPressed: () {}),
                 ],
               ),
             ),

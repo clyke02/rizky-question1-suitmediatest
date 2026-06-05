@@ -57,7 +57,13 @@ class ThirdScreenView extends GetView<ThirdScreenController> {
             ),
           );
         }
-        return ThirdScreenListBuilder(items: controller.users);
+        if (controller.users.isEmpty) {
+          return const Center(child: Text('No users found.'));
+        }
+        return RefreshIndicator(
+          onRefresh: controller.fetchUsers,
+          child: ThirdScreenListBuilder(items: controller.users),
+        );
       }),
     );
   }

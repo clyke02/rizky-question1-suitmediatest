@@ -13,7 +13,10 @@ class ThirdScreenService {
   );
 
   Future<UserListResponse> getUsers({int page = 1}) async {
-    final response = await _dio.get('/api/users', queryParameters: {'page': page});
+    final response = await _dio.get(
+      '/api/users',
+      queryParameters: {'page': page},
+    );
     return UserListResponse.fromJson(response.data as Map<String, dynamic>);
   }
 }

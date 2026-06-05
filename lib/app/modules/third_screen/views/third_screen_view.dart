@@ -34,40 +34,15 @@ class ThirdScreenView extends GetView<ThirdScreenController> {
           child: Divider(height: 1, thickness: 1, color: Color(0xFFE2E3E4)),
         ),
       ),
-      body: Obx(() {
-        if (controller.isLoading.value) {
-          return const Center(child: CircularProgressIndicator());
-        }
-        if (controller.errorMessage.value.isNotEmpty) {
-          return Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  controller.errorMessage.value,
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(color: Colors.red),
-                ),
-                const SizedBox(height: 12),
-                ElevatedButton(
-                  onPressed: controller.fetchUsers,
-                  child: const Text('Retry'),
-                ),
-              ],
-            ),
-          );
-        }
-        if (controller.users.isEmpty) {
-          return const Center(child: Text('No users found.'));
-        }
-        return RefreshIndicator(
-          onRefresh: controller.fetchUsers,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: ThirdScreenListBuilder(items: controller.users),
+      body: RefreshIndicator(
+        onRefresh: () async => controller.refreshList(),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: ThirdScreenListBuilder(
+            pagingController: controller.pagingController,
           ),
-        );
-      }),
+        ),
+      ),
     );
   }
 }

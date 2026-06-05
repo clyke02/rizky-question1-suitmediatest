@@ -1,23 +1,14 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FirstScreenController extends GetxController {
-  //TODO: Implement FirstScreenController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
+  final nameController = TextEditingController();
+  final palindromeController = TextEditingController();
 
   @override
   void onClose() {
+    nameController.dispose();
+    palindromeController.dispose();
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

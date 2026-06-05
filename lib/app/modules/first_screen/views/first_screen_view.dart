@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../widgets/custom_text_field.dart';
 import '../controllers/first_screen_controller.dart';
 
 class FirstScreenView extends GetView<FirstScreenController> {
@@ -18,7 +19,34 @@ class FirstScreenView extends GetView<FirstScreenController> {
             fit: BoxFit.cover,
           ),
         ),
-        child: Center(child: Text('FirstScreenView')),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Image.asset(
+              'assets/images/img_profile.png',
+              width: 116,
+              height: 116,
+            ),
+            const SizedBox(height: 32),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: Column(
+                children: [
+                  CustomTextField(
+                    controller: controller.nameController,
+                    hintText: 'Name',
+                  ),
+                  const SizedBox(height: 16),
+                  CustomTextField(
+                    controller: controller.palindromeController,
+                    hintText: 'Palindrome',
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

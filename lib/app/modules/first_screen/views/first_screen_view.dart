@@ -44,7 +44,12 @@ class FirstScreenView extends GetView<FirstScreenController> {
                     hintText: 'Palindrome',
                   ),
                   const SizedBox(height: 45),
-                  CustomButton(text: 'CHECK', onPressed: () {}),
+                  CustomButton(
+                    text: 'CHECK',
+                    onPressed: () {
+                      controller.checkPalindrome();
+                    },
+                  ),
                   const SizedBox(height: 15),
                   CustomButton(text: 'NEXT', onPressed: () {}),
                 ],

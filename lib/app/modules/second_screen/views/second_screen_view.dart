@@ -33,10 +33,29 @@ class SecondScreenView extends GetView<SecondScreenController> {
           child: Divider(height: 1, thickness: 1, color: Color(0xFFE2E3E4)),
         ),
       ),
-      body: const Center(
-        child: Text(
-          'SecondScreenView is working',
-          style: TextStyle(fontSize: 20),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Welcome',
+              style: TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize: 12,
+                color: Color(0xFF1A1A1A),
+              ),
+            ),
+            const SizedBox(height: 4),
+            Text(
+              controller.name,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: Color(0xFF04021D),
+              ),
+            ),
+          ],
         ),
       ),
     );

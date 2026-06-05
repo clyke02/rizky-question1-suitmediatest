@@ -1,23 +1,14 @@
 import 'package:get/get.dart';
 
 class SecondScreenController extends GetxController {
-  //TODO: Implement SecondScreenController
+  String name = '';
 
-  final count = 0.obs;
   @override
   void onInit() {
     super.onInit();
+    final args = Get.arguments;
+    if (args != null && args is Map) {
+      name = args['name'] ?? '';
+    }
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }

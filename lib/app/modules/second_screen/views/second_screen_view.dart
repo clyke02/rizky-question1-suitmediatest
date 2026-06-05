@@ -65,18 +65,25 @@ class SecondScreenView extends GetView<SecondScreenController> {
                   borderRadius: BorderRadius.all(Radius.circular(12)),
                 ),
                 child: Center(
-                  child: Text(
-                    controller.selectedUser,
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xFF04021D),
+                  child: Obx(
+                    () => Text(
+                      controller.selectedUser.value,
+                      style: const TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFF04021D),
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
-            CustomButton(text: 'Choose a User', onPressed: () => Get.back()),
+            CustomButton(
+              text: 'Choose a User',
+              onPressed: () {
+                controller.changeName();
+              },
+            ),
           ],
         ),
       ),

@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 class SecondScreenController extends GetxController {
   String name = '';
-  String selectedUser = 'Select User Name';
+  Rx<String> selectedUser = 'Select User Name'.obs;
 
   @override
   void onInit() {
@@ -11,5 +11,9 @@ class SecondScreenController extends GetxController {
     if (args != null && args is Map) {
       name = args['name'] ?? '';
     }
+  }
+
+  void changeName() {
+    selectedUser.value = 'Jokowi';
   }
 }

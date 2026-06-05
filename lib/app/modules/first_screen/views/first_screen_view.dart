@@ -51,7 +51,12 @@ class FirstScreenView extends GetView<FirstScreenController> {
                     },
                   ),
                   const SizedBox(height: 15),
-                  CustomButton(text: 'NEXT', onPressed: () {}),
+                  CustomButton(
+                    text: 'NEXT',
+                    onPressed: () {
+                      controller.goToNextScreen();
+                    },
+                  ),
                 ],
               ),
             ),

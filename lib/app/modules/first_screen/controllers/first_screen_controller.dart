@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rizky_question1_suitmediatest/app/routes/app_pages.dart';
 
 class FirstScreenController extends GetxController {
   final nameController = TextEditingController();
@@ -25,5 +26,9 @@ class FirstScreenController extends GetxController {
         'The text is not a palindrome.',
       );
     }
+  }
+
+  void goToNextScreen() {
+    Get.toNamed(Routes.SECOND_SCREEN);
   }
 }

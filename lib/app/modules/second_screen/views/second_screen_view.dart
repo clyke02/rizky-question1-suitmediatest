@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:rizky_question1_suitmediatest/app/widgets/custom_button.dart';
 
 import '../controllers/second_screen_controller.dart';
 
@@ -55,6 +56,27 @@ class SecondScreenView extends GetView<SecondScreenController> {
                 color: Color(0xFF04021D),
               ),
             ),
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                height: double.infinity,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(12)),
+                ),
+                child: Center(
+                  child: Text(
+                    controller.selectedUser,
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF04021D),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            CustomButton(text: 'Choose a User', onPressed: () => Get.back()),
           ],
         ),
       ),

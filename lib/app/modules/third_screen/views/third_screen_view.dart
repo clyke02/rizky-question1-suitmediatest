@@ -62,7 +62,10 @@ class ThirdScreenView extends GetView<ThirdScreenController> {
         }
         return RefreshIndicator(
           onRefresh: controller.fetchUsers,
-          child: ThirdScreenListBuilder(items: controller.users),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: ThirdScreenListBuilder(items: controller.users),
+          ),
         );
       }),
     );

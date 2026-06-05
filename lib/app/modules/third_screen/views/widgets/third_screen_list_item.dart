@@ -16,8 +16,8 @@ class ThirdScreenListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       child: Row(
         children: [
           ClipOval(
@@ -31,7 +31,7 @@ class ThirdScreenListItem extends StatelessWidget {
                   )
                 : _placeholder(),
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: 20),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -39,18 +39,14 @@ class ThirdScreenListItem extends StatelessWidget {
                 '${firstName ?? ''} ${lastName ?? ''}'.trim(),
                 style: const TextStyle(
                   fontSize: 16,
-                  fontWeight: FontWeight.w600,
-                  color: Color(0xFF1A1A1A),
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFF04021D),
                 ),
               ),
               const SizedBox(height: 4),
               Text(
                 email?.toUpperCase() ?? '',
-                style: const TextStyle(
-                  fontSize: 12,
-                  color: Color(0xFF888888),
-                  letterSpacing: 0.3,
-                ),
+                style: const TextStyle(fontSize: 10, color: Color(0xFF686777)),
               ),
             ],
           ),
@@ -60,9 +56,9 @@ class ThirdScreenListItem extends StatelessWidget {
   }
 
   Widget _placeholder() => Container(
-        width: 60,
-        height: 60,
-        color: const Color(0xFFE2E3E4),
-        child: const Icon(Icons.person, color: Colors.grey),
-      );
+    width: 60,
+    height: 60,
+    color: const Color(0xFFE2E3E4),
+    child: const Icon(Icons.person, color: Colors.grey),
+  );
 }

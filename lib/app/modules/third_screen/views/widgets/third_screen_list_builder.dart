@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:lottie/lottie.dart';
 
@@ -29,6 +30,11 @@ class ThirdScreenListBuilder extends StatelessWidget {
                 lastName: user.lastName,
                 email: user.email,
                 avatar: user.avatar,
+                onTap: () {
+                  final fullName =
+                      '${user.firstName ?? ''} ${user.lastName ?? ''}'.trim();
+                  Get.back(result: fullName);
+                },
               ),
               newPageProgressIndicatorBuilder: (_) => const Padding(
                 padding: EdgeInsets.symmetric(vertical: 16),

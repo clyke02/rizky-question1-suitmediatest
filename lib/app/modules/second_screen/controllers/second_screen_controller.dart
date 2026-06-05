@@ -14,11 +14,10 @@ class SecondScreenController extends GetxController {
     }
   }
 
-  void changeName() {
-    selectedUser.value = 'Jokowi';
-  }
-
-  void goToNextScreen() {
-    Get.toNamed(Routes.THIRD_SCREEN);
+  Future<void> goToNextScreen() async {
+    final result = await Get.toNamed(Routes.THIRD_SCREEN);
+    if (result != null) {
+      selectedUser.value = result;
+    }
   }
 }
